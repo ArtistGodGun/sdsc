@@ -5,7 +5,7 @@ def main():
     parser = argparse.ArgumentParser(
         description = 
         '''
-            This is a Single Drum Source Classification.
+            This is a Single Drum Source Classification by ArtistGodGun
             Using class list
                 'closed':0
                 'clap':1
@@ -22,9 +22,9 @@ def main():
         )
     parser.add_argument("inputdata", type=str, help="This Argument is Input data(audiofile or folder)")
     parser.add_argument("-d", "--device", default='cpu', help="default value is CPU. using 'mps'. cuda is not available")
-    parser.add_argument("-m", "--models", type = int, default=0, help="Classes Model choice (10 or 16)")
-    parser.add_argument("-s", "--save", default='n', help="This Argument will Save a TextFile (audio file path and detect Value)")
-    parser.add_argument("-info", "--info", default='y', help="This Argument will Save a TextFile (audio file path and detect Value)")
+    parser.add_argument("-m", "--models", type = int, default=0, help="Classes Model choice (0 or 1) - 0 : 10class. 1:16class")
+    parser.add_argument("-s", "--save", default='n', help="save to csv (y,n). your file path and pred as list")
+    parser.add_argument("-info", "--info", default='y', help="print path and pred in command-line(y,n)")
     args = parser.parse_args()
     save = []
     input_data = args.inputdata
