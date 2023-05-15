@@ -87,7 +87,8 @@ I would like to share the dataset, but unfortunately, most of the data I used co
 
 ## Model
 This is a simple CNN model that uses a stack of 2D Convolutional layers followed by Batch Normalization and ReLU activation. It then utilizes Fully Connected layers for classification. This is a common approach seen in image classification tasks. As the number of layers in the network increases, there is a tendency for the accuracy to improve. However, the quality and accuracy of the training data have a greater impact on the model's performance.
-https://github.com/ArtistGodGun/sdsc/blob/main/SDSC.png?raw=true
+![SDSC](https://github.com/ArtistGodGun/sdsc/assets/60863363/b59b471f-fb97-4042-b71c-87c4f22ae095)
+
 
 * The MFCC parameters used are:
 ```
