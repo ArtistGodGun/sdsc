@@ -3,8 +3,7 @@ import pkg_resources
 from .model import SDSClassification
 from .audio import mfcc_torch
 
-def eval(path, device):
-    combine = True
+def eval(path, device, combine):
     if combine:
         onehot = {'closed':0, 'clap':1, 'conga':2,'crash':3,'kick':4,'oh':5,'ride':6,'rim':7,'snare':8,'tom':9}
     else:

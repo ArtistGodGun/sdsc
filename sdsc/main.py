@@ -17,13 +17,12 @@ def main():
                 'rim':7
                 'snare':8
                 'tom':9
-            
             if audio file is not upper class, I don't know what choice.
         '''
         )
     parser.add_argument("inputdata", type=str, help="This Argument is Input data(audiofile or folder)")
     parser.add_argument("-d", "--device", default='cpu', help="default value is CPU. using 'mps'. cuda is not available")
-    parser.add_argument("-m", "--models", type = int, default=10, help="Classes Model choice (10 or 16)")
+    parser.add_argument("-m", "--models", type = int, default=0, help="Classes Model choice (10 or 16)")
     parser.add_argument("-s", "--save", default='n', help="This Argument will Save a TextFile (audio file path and detect Value)")
     parser.add_argument("-info", "--info", default='y', help="This Argument will Save a TextFile (audio file path and detect Value)")
     args = parser.parse_args()
@@ -38,7 +37,11 @@ def main():
             raise ValueError(f'Not Found Audio File in {input_data}')
     else:
         path = [input_data]
-    save = eval(path, device=args.device)
+    if args.models == 0:
+        m = True
+    else:
+        m = False
+    save = eval(path, device=args.device, combine = m)
     if args.save == 'y':
         save_csv(save)
     if args.info == 'y':
