@@ -11,7 +11,10 @@ setup(
       'sdsc' : ['*.pth']
     },
     install_requires=[
-        "argparse"
+        "argparse",
+        "torch",
+        "torchaudio",
+        "numpy"
     ],
     entry_points={
         "console_scripts": [

@@ -7,10 +7,9 @@ CLASSES =  {
 
 def getPath(path):
     audio_list = []
-    for root, dirs, files in os.walk(path):
-        audio_files = [os.path.join(root, f) for f in files if f.endswith(('.wav', '.mp3'))]
-        for i in audio_files:
-            audio_list.append(i)
+    for i in os.listdir(path):
+        if i.endswith(('.wav', '.mp3')):
+            audio_list.append(os.path.join(path,i))
     return audio_list
 
 def save_csv(save):

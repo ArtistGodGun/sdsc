@@ -10,14 +10,17 @@ def eval(path, device):
     else:
         onehot = {'closed_a':0, 'closed_e':1, 'clap':2, 'conga':3,'crash_a':4,'crash_e':5,'kick_ac':6,'kick_e':7,'oh_a':8,'oh_e':9,'ride':10,'ride_e':11,'rim':12,'snare':13,'snare_e':14,'tom':15}
     convert_onehot = {v:k for k,v in onehot.items()}
-    model = SDSClassification(onehot).to(device)
+    model = SDSClassification(onehot)
     p = pkg_resources.resource_filename('sdsc', f'sdsc_{len(onehot)}.pth')
-    model.load_state_dict(torch.load(p))
+    if device == 'cpu':
+        model.load_state_dict(torch.load(p, map_location=device))
+    else:
+        model.load_state_dict(torch.load(p)).to(device)
     model.eval()
     return_list = []
     with torch.no_grad():
         for i in path:
             mfcc = mfcc_torch(i).unsqueeze(0).to(device)
             output = model(mfcc)
-            return_list.append((path, convert_onehot[torch.max(output.data,1)[1].item()]))
+            return_list.append((i, convert_onehot[torch.max(output.data,1)[1].item()]))
     return return_list

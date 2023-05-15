@@ -39,7 +39,6 @@ def main():
     else:
         path = [input_data]
     save = eval(path, device=args.device)
-    
     if args.save == 'y':
         save_csv(save)
     if args.info == 'y':

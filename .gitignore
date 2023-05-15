@@ -1,5 +1,6 @@
-cl.wav
+*.wav
 result.csv
 sdsc.egg-info
 dist
 build
+venv
