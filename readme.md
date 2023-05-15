@@ -4,6 +4,38 @@ Hello, my name is ArtistGodgun (real name: Keonhee Hong) and I studied compositi
 ## Project Description
 This model is designed to classify various single-source sounds used in drums (such as kick, hi-hat, snare, etc.) when given an audio file input with a sample rate of 44.1 kHz and a bit depth of 16-bit. The audio file is converted to MFCC and trained using a simple CNN model commonly used for image classification. I created this model as a preliminary step to develop Drum Audio Separation and Drum Transcription models.
 
+## Install
+```
+git clone https://github.com/ArtistGodGun/sdsc.git
+cd ~/sdsc
+python setup.py install
+```
+
+## Usage
+
+* Simple use
+```
+# single files
+sdsc [audioFile]
+
+# audio files path
+sdsc [path]
+```
+
+* command-line
+```
+# save to csv (y or n)
+sdsc [path] -s y
+
+# info print (y or n)
+sdsc [path] -info y
+
+# gpu device set (cpu or mps) 
+sdsc [path] -d mps # default : cpu
+
+# model setting ()
+```
+
 ## Dataset
 The model distinguishes 10 classes (Kick, Closed Hi-hat, Open Hi-hat, Snare, Clap, Crash, Ride, Rimshot, Conga, Tom), with 100 samples used for each class. The length of each sample varies, but when inputted to the model, it is standardized to 1 second. For samples shorter than 1 second, it is padded with 0s, while for samples longer than 1 second, it is trimmed to 1 second. No additional techniques, such as fade-out, are used.
 
