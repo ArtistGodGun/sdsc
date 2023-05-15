@@ -1,5 +1,5 @@
 # SDSC - SingleDrumSourceClassification 
-Hello. I am an artist named Godgun (real name: Keonhee Hong) who studied composition in South Korea and has been involved in music activities across various genres. Currently, I am developing an artificial intelligence for music composition. 
+Hello. I am an "ArtistGodgun" (real name: Keonhee Hong) who studied composition in South Korea and has been involved in music activities across various genres. Currently, I am developing an artificial intelligence for music composition. 
 
 ## Project Description
 
