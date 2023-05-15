@@ -12,13 +12,12 @@ For this model, more time and effort were spent on constructing the dataset than
 ## Model
 The model uses the torchaudio MFCC to transform 1-second wave data into 2D Conv - BatchNorm - ReLU, stacked in five layers of a simple CNN model commonly used for image classification. 
 * The  parameters used are:
-
-₩₩₩
+```
 n_fft = 4096
 hop_length = 512
 n_mels = 256
 n_mfcc = 128
-₩₩₩
+```
 As the layers become deeper, the accuracy tends to increase, but it depends on how precise and accurate the training data is.
 
 ## Results
