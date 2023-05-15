@@ -10,11 +10,15 @@ The model distinguishes 10 classes (Kick, Closed Hi-hat, Open Hi-hat, Snare, Cla
 For this model, more time and effort were spent on constructing the dataset than on building the model itself. Most of the sources are divided into acoustic and EDM sources, and as much as possible, samples with mixed sources (such as mixing hi-hat with kick for attack or combining snare and clap) were excluded from the dataset. The dataset was gathered from my personal collection of drum sources as well as from Splice.
 
 ## Model
-The model uses the torchaudio MFCC to transform 1-second wave data into 2D Conv - BatchNorm - ReLU, stacked in five layers of a simple CNN model commonly used for image classification. The parameters used are:
+The model uses the torchaudio MFCC to transform 1-second wave data into 2D Conv - BatchNorm - ReLU, stacked in five layers of a simple CNN model commonly used for image classification. 
+* The  parameters used are:
+
+₩₩₩
 n_fft = 4096
 hop_length = 512
 n_mels = 256
 n_mfcc = 128
+₩₩₩
 As the layers become deeper, the accuracy tends to increase, but it depends on how precise and accurate the training data is.
 
 ## Results
