@@ -83,6 +83,8 @@ The length of each sample varies, but when inputted to the model, it is standard
 
 In the case of this model, more time and effort were invested in constructing the dataset rather than building the model itself. Many available samples in the dataset already contain mixed sources, such as combining hi-hat with kick for added attack or mixing snare and clap. Such samples were excluded as much as possible. The dataset was gathered from my personal collection of drum sources as well as from Splice.
 
+I would like to share the dataset, but unfortunately, most of the data I used consists of commercially purchased samples, making it difficult to release the original data. I will explore the possibility of sharing the dataset by lowering the sample rate and consider releasing it in the future. If you can provide any assistance regarding this matter, please let me know via the email address at the bottom of this post. Thank you.
+
 ## Model
 This is a simple CNN model that uses a stack of 2D Convolutional layers followed by Batch Normalization and ReLU activation. It then utilizes Fully Connected layers for classification. This is a common approach seen in image classification tasks. As the number of layers in the network increases, there is a tendency for the accuracy to improve. However, the quality and accuracy of the training data have a greater impact on the model's performance.
 
