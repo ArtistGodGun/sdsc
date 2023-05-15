@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 setup(
     name="sdsc",
     version="0.1.0",
-    description="My awesome program",
-    author="My Name",
-    author_email="myemail@example.com",
+    description="SingleDrumSourceClassification (Classes : 10 or 16)",
+    author="ArtistGodGun",
+    author_email="artistgodgun@gmail.com",
     packages=find_packages(),
     package_data={
       'sdsc' : ['*.pth']
@@ -25,5 +25,8 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Natural Language :: Korean",
+        "Topic :: Multimedia :: Sound/Audio",
+        "Topic :: Multimedia :: Sound/Audio :: Analysis"
     ],
 )
